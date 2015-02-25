@@ -116,7 +116,7 @@
 								}						
 							}
 							if($sum > 0){
-								$result[] = array($key=>$sum);
+								$result[] = array($key =>$sum);
 							}
 						}
 						return $result;
