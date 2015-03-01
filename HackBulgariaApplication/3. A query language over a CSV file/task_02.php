@@ -104,22 +104,28 @@
 						
 					}
 					
-					function getSumResult($keys, $limit){
+				function getSumResult($keys, $limit)
+					{
 						
 						global $data;
-						$result = array();
-						foreach ($keys as $key) {
+						foreach ($keys as $key) 
+						{
 							$sum = 0;
-							for ($i=0; $i<$limit; $i++) {
-								if(array_key_exists($key, $data[$i]) && is_numeric($data[$i][$key])){
+							for ($i=0; $i<$limit; $i++) 
+							{
+								if(array_key_exists($key, $data[$i]) && is_numeric($data[$i][$key]))
+								{
 									$sum += (int) $data[$i][$key];
 								}						
 							}
-							if($sum > 0){
-								$result[] = array($key =>$sum);
-							}
+							if($sum > 0)
+							{
+								$result[$key] = $sum;
+							} 
 						}
-						return $result;
+						return array($result);
+						
+					}
 						
 					}
 					
